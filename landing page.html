@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Maiden Orange' rel='stylesheet'>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <link rel="stylesheet" href="css/landingpage.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+
+
+   
+
+    
+</head>
+<body>
+
+    <!-- Register Overlay -->
+    <div id="registerOverlay" class="overlay">
+ <div class="overlay-content">
+    <div class="wrapper">
+        <div class="second-wrapper">
+          <span class="icon-close" onclick="closeRegisterOverlay()">
+              <i class="bi bi-x-lg"></i>
+          </span>
+          <div class="form-box login">
+              <h2>Welcome to ReserveRendezvous!</h2>
+              <form id="RegisterForm">
+                  <div class="input-box">
+                      <input type="name" name="name1" required>
+                      <label>Fullname</label>
+                  </div>
+                  <div class="input-box">
+                      <input type="email" name="email1" required>
+                      <label>Email</label>
+                      <i class='bx bxs-envelope'></i>
+                  </div>
+                  <div class="input-box">
+                      <input type="password" name="password1" required>
+                      <label>Password</label>
+                      <i class='bx bxs-lock'></i>
+                  </div>
+
+                  <div class="input-box">
+                    <input type="password" name="confirm-password"  required>
+                    <label>Confirmation Password</label>
+                    <i class='bx bxs-lock'></i>
+                </div>
+                 
+                <div>
+                    <input type="hidden" name="role" id="role" value="Customer">
+                </div>
+                  
+                  <button type="submit" class="btn">SIGN UP</button>
+                  <div class="login-register">
+                      <p>Already have an account? <a href="#"
+                           class="register-link" onclick="openOverlay(); closeRegisterOverlay()">LOGIN</a></p>
+                  </div>
+              </form>
+          </div>
+        </div>
+        </div>
+    </div>
+    </div>
+    <!-- Login Overlay -->
+    <div id="loginOverlay" class="overlay">
+        <div class="overlay-content">
+            <div class="second-wrapper">
+                <span class="icon-close" onclick="closeOverlay()">
+                    <i class="bi bi-x-lg"></i>
+                </span>
+                <div class="form-box login">
+                    <h2>Welcome Back!</h2>
+                    <form id="loginForm">
+                        <div class="input-box">
+                            <input type="email" name="email" required>
+                            <label>Email</label>
+                            <i class='bx bxs-envelope'></i>
+                        </div>
+                        <div class="input-box">
+                            <input type="password" name="password" required>
+                            <label>Password</label>
+                            <i class='bx bxs-lock'></i>
+                        </div>
+                        <div class="remember-forgot">
+                            <label><input type="checkbox">
+                            Remember me</label>
+                            <a href="#">Forgot Password?</a>
+                        </div>
+                        <button type="submit" class="btn">LOGIN</button>
+                        <div class="login-register">
+                            <p>Don't have an account? <a href="#"
+                                 class="register-link" onclick="openRegisterOverlay(); closeOverlay();" >Register</a></p>
+                        </div>
+                        <div class="login-admin">
+                          <p><a href="#"
+                               class="register-link" onclick="openAdminOverlay(); closeOverlay();">Admin Login</a></p>
+                      </div>
+                    </form>
+                </div>
+              </div>
+        </div>
+    </div>
+   <!--Admin Login--> 
+   <div id="adminOverlay" class="overlay">
+    <div class="overlay-content">
+   <div class="wrapper">
+    <div class="second-wrapper">
+      <span class="icon-close" onclick="closeAdminOverlay()">
+          <i class="bi bi-x-lg"></i>
+      </span>
+      <div class="form-box login">
+          <h2>Admin Login!</h2>
+          <form id="AdminLoginForm">
+              <div class="input-box">
+                  <input type="email" name="email" required>
+                  <label>Email</label>
+                  <i class='bx bxs-envelope'></i>
+              </div>
+              <div class="input-box">
+                  <input type="password" name="password" required>
+                  <label>Password</label>
+                  <i class='bx bxs-lock'></i>
+              </div>
+              <button type="submit" class="btn">LOGIN</button>
+          </form>
+      </div>
+    </div>
+    </div>
+</div>
+</div>
+    <div class="header"> 
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-5 mt-2">
+                    <h1 class="logo">Reserverendezvouz</h1>
+                    <h1 class="header-text text-center">Enjoy Hundreds Of <br> Flavors Under One Roof</h1>
+                    <p style="text-align: center; color: white;">"Welcome to our exquisite restaurant, where culinary artistry takes center stage. Our talented chefs craft dishes that are a true delight for the senses. Join us for a dining experience that combines the freshest ingredients, innovative recipes, and a warm, inviting ambiance. Reserve your table today to indulge in a gastronomic journey like no other."</p>
+                <div class="d-flex gap-2">
+                <button class="book-btn" onclick="openOverlay()">BOOK A TABLE</button>
+                <button class="book-btn" onclick="openOverlay()">ONLINE DELIVERY</button>
+                </div>
+                <br>
+                <br>
+                </div>
+                <div class="col-4 mt-2">
+                    <ul class="navbar">
+                        <li class="inline"><a href="#">HOME</a></li>
+                        <li class="inline"><a href="#about-us-section" class="scrollable">ABOUT US</a></li>
+                        <li class="inline"><a href="#">CONTACT</a></li>
+                    </ul>
+                    <img style="width: 520px;  margin-left: 110px;" src="img/landingpageimg.png" alt="">
+                </div>
+                <div class="col-3 mb-2">
+                    <button class="btn" id="loginbtn" onclick="openOverlay()">Sign In</button>
+                    <button class="btn" id="registerbtn" onclick="openRegisterOverlay()">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="body">
+        <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+               <div class="boxes">
+                <div class="box1">
+                    <h4 class="master"  id="master-chief-section" data-aos="fade-up" data-aos-duration="1000">Master Chief</h6>
+                        <p>"Meet our master chefs, the <br> culinary artists behind every <br> exquisite dish"</p>
+                </div>
+
+                <div class="box2">
+                    <h4>Quality Food</h4>
+                    <p>"Savor the excellence of quality <br> food, prepared with passion and <br> expertise"</p>
+                </div>
+
+                <div class="box3">
+                    <h4>Online Order</h4>
+                    <p>"Order your favorite dishes <br> conviniently through popular food <br> delivery platforms"</p>
+                </div>
+
+                <div class="box4">
+                    <h4>Book Table</h4>
+                    <p>"Reserve your table at Reserverendezvouz effortlessly! Choose your date, time, and party size online for a seamless dining experience. Avoid the wait—book now and enjoy a warm, welcoming meal with us!"</p>
+                </div>
+               </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+        <div class="row">
+            <div class="col-6">
+                <br>
+                <img style="width: 500px; margin-left: 20px; " src="img/landingpageimg2.png" alt="">
+            </div>
+            <div class="col-6">
+                <br>
+                <br>
+                <br>
+                <br>
+                <h1 id="about-us-section" style="margin-left: 30px;">About Us</h1>
+                <br>
+                <h2 style="text-align: center; font-size: 31px;">Welcome to ReserveRendezvouz</h1>
+                    <p style="text-align: center; font-size: 25px; color: #968787;">Discover our restaurant’s commitment to excellence, where every dish is a <br> testament to our passion for fine dining.
+                        <br> 
+                      <br>  indulge in a dining experience that exudes luxury and sophistication, <br> where every moment is infused with an ambiance of opulence and <br> refinement</p>
+            </div>
+            
+        </div>
+    </div>
+    </div>
+   
+      
+</div>
+</div>
+</div>
+    </div>
+    <footer style="background-color: #000000;">
+   <div class="container">
+    <div class="row">
+        <div class="col">
+ <h4 style="color: white; margin-top: 20px; font-family: 'Arial';">Company</h4>
+ <ul class="footul" style="list-style-type: none; ;">
+    <li class="footlist"><a href="#">About Us</a></li>
+    <li class="footlist"><a href="#">Careers</a></li>
+    <li class="footlist"><a href="#">Contact</a></li>
+ </ul>
+        </div>
+        <div class="col">
+            <h4 style="color: white; margin-top: 20px; font-family: 'Arial';"> &nbsp; Support</h4>
+ <ul class="footul" style="list-style-type: none; ;">
+    <li class="footlist"><a href="#">About Us</a></li>
+    <li class="footlist"><a href="#">Careers</a></li>
+    <li class="footlist"><a href="#">Contact</a></li>
+ </ul>
+        </div>
+        <div class="col">
+            <h4 style="color: white; margin-top: 20px; font-family: 'Arial';"> &nbsp; Legal</h4>
+ <ul class="footul" style="list-style-type: none; ;">
+    <li class="footlist"><a href="#">Cookies Policy</a></li>
+    <li class="footlist"><a href="#">Privacy Policy</a></li>
+    <li class="footlist"><a href="#">Terms of Service</a></li>
+ </ul>
+        </div>
+    </div>
+   </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
+<script>
+ ocument.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
+function openOverlay() {
+    document.getElementById('loginOverlay').style.display = 'block';
+}
+
+function closeOverlay() {
+    document.getElementById('loginOverlay').style.display = 'none';
+}
+
+function openRegisterOverlay() {
+    document.getElementById('registerOverlay').style.display = 'block';
+}
+
+function closeRegisterOverlay() {
+    document.getElementById('registerOverlay').style.display = 'none';
+}
+
+function openAdminOverlay() {
+    document.getElementById('adminOverlay').style.display = 'block';
+}
+
+function closeAdminOverlay() {
+    document.getElementById('adminOverlay').style.display = 'none';
+}
+ </script>
+ <script>
+$(document).ready(function() {
+    $('form#AdminLoginForm').on('submit', function(e) {
+        e.preventDefault();
+
+        var email = $('input[name="email"]').val();
+        var password = $('input[name="password"]').val();
+
+        $.ajax({
+            url: 'http://127.0.0.1:8000/api/admin/login',
+            method: 'POST',
+            data: JSON.stringify({
+                email: email,
+                password: password
+            }),
+            dataType: 'json',
+            contentType: 'application/json',
+            headers: {
+                'Accept': 'application/json'
+            },
+            success: function(response) {
+                window.location.assign('/Admin-DashBoard.html');
+            },
+            error: function(xhr, status, error) {
+                alert(error);
+            }
+        });
+    })
+ 
+
+    $('form#loginForm').on('submit', function(e) {
+        e.preventDefault();
+
+        var email = $('input[name="email"]').val();
+        var password = $('input[name="password"]').val();
+
+        $.ajax({
+            url: 'http://127.0.0.1:8000/api/login/user',
+            method: 'POST',
+            data: JSON.stringify({
+                email: email,
+                password: password
+            }),
+            dataType: 'json',
+            contentType: 'application/json',
+            headers: {
+                'Accept': 'application/json'
+            },
+
+
+            success: function(response) {
+                Cookies.set('userId', `${response.user.id}`, { expires: 7 });
+                Cookies.set('name', `${response.user.name}`, { expires: 7 });
+                window.location.assign('Menu_exm.html');
+            },
+            error: function(xhr, status, error) {
+                alert(error);
+            }
+        });
+    })
+
+    $('form#RegisterForm').on('submit', function(e) {
+        e.preventDefault();
+        var name = $('input[name="name1"]').val();
+        var email = $('input[name="email1"]').val();
+        var password = $('input[name="password1"]').val();
+        var confirmationPassword = $('input[name="confirm-password"]').val();
+        var role = $('input[name="role"]').val();
+
+
+        $.ajax({
+            url: 'http://127.0.0.1:8000/api/User',
+            method: 'POST',
+            data: JSON.stringify({
+                name: name,
+                email: email,
+                password: password,
+                password_confirmation: confirmationPassword,
+                role: role
+            }),
+            dataType: 'json',
+            contentType: 'application/json',
+            headers: {
+                'Accept': 'application/json'
+            },
+            success: function(response) {
+                window.location.assign('landing page.html');
+            },
+            
+            error: function(xhr, status, error) {
+                alert(error);
+            }
+        });
+    })
+
+});
+ </script>
+
+
+</body>
+</html>

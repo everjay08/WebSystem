@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food Delivery Tracking</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #121212;
+      margin: 0;
+      padding: 0;
+      color: #e0e0e0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      background: #252836;
+      padding: 30px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+      border-radius: 10px;
+      max-width: 1000px;
+      width: 90%;
+    }
+    .order-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .order-header h1 {
+      margin: 0;
+      font-size: 32px;
+      color: #ffa629;
+    }
+    .order-status {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 30px;
+    }
+    .status-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex: 1;
+      margin: 0 10px;
+      text-align: center;
+    }
+    .status-icon {
+      width: 50px;
+      height: 50px;
+      background: #44475a;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 20px;
+      margin-bottom: 10px;
+      transition: background 0.3s;
+    }
+    .status-text {
+      color: #bdbdbd;
+    }
+    .status-icon.active {
+      background: #4caf50;
+    }
+    .status-icon.pending {
+      background: #ff9800;
+    }
+    .status-icon.completed {
+      background: #f44336;
+    }
+    .contact-info {
+      background: #303846;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    .contact-info h2 {
+      margin: 0 0 10px;
+      font-size: 24px;
+      color: #ffa629;
+    }
+    .contact-info p {
+      margin: 5px 0;
+      font-size: 16px;
+    }
+    .riders {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 30px;
+    }
+    .rider-card {
+      background: #373a47;
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+      width: 30%;
+    }
+    .rider-card img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+    .actions {
+      display: flex;
+      justify-content: space-around;
+    }
+    .action-button {
+      padding: 12px 24px;
+      background: #2196f3;
+      border: none;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.3s;
+    }
+    .action-button:hover {
+      background: #1976d2;
+    }
+    .action-button.cancel {
+      background: #f44336;
+    }
+    .action-button.cancel:hover {
+      background: #d32f2f;
+    }
+    .action-button.return {
+      background: #ff9800;
+    }
+    .action-button.return:hover {
+      background: #f57c00;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="order-header">
+      <h1>Order #<span id="order-id">12345</span></h1>
+    </div>
+    <div class="order-status">
+      <div class="status-item">
+        <div class="status-icon active">✔</div>
+        <div class="status-text">Order Placed</div>
+      </div>
+      <div class="status-item">
+        <div class="status-icon pending">⌛</div>
+        <div class="status-text">Preparing</div>
+      </div>
+      <div class="status-item">
+        <div class="status-icon pending">🚚</div>
+        <div class="status-text">Out for Delivery</div>
+      </div>
+      <div class="status-item">
+        <div class="status-icon pending">🏠</div>
+        <div class="status-text">Delivered</div>
+      </div>
+    </div>
+    <div class="contact-info">
+      <h2>Driver Info</h2>
+      <p>Name: John Doe</p>
+      <p>Contact: 123-456-7890</p>
+      <p>Vehicle: BMW 7 Series</p>
+    </div>
+    <div class="riders">
+      <div class="rider-card">
+        <img src="assets/driver1.jpg" alt="Driver">
+        <p><strong>John Doe</strong></p>
+        <p>BMW 7 Series</p>
+      </div>
+      <div class="rider-card">
+        <img src="assets/driver2.jpg" alt="Driver">
+        <p><strong>Jane Smith</strong></p>
+        <p>Mercedes S-Class</p>
+      </div>
+      <div class="rider-card">
+        <img src="assets/driver3.jpg" alt="Driver">
+        <p><strong>Michael Brown</strong></p>
+        <p>Audi A8</p>
+      </div>
+    </div>
+    <div class="actions">
+      <button class="action-button return" onclick="alert('Return order requested!')">Return Order</button>
+      <button class="action-button cancel" onclick="alert('Order cancelled!')">Cancel Order</button>
+      <button class="action-button" onclick="alert('Order received!')">Order Received</button>
+    </div>
+  </div>
+  
+  <script>
+    const statuses = document.querySelectorAll('.status-item .status-icon');
+    let currentStatus = 0;
+
+    // Fetch order details from the database
+    fetch('fetch_order.php') // PHP file that fetches order details from MySQL
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('order-id').textContent = data.order_id;
+        updateStatus(data.status);
+      });
+
+    function updateStatus(status) {
+      for (let i = 0; i < status; i++) {
+        statuses[i].classList.remove('pending');
+        statuses[i].classList.add('completed');
+      }
+      statuses[status].classList.remove('pending');
+      statuses[status].classList.add('active');
+      currentStatus = status;
+    }
+  </script>
+</body>
+</html>

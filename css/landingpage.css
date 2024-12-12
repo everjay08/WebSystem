@@ -1,0 +1,310 @@
+.header{
+  padding: 10px;
+  background: #1F1D2B;
+  
+}
+
+html {
+    scroll-behavior: smooth;
+  }
+
+.header-text{
+    color: white; font-family: 'Maiden Orange'; margin-top: 50px; font-size: 59px; margin-left: 20px;
+}
+
+
+.logo{
+    font-family: 'Maiden Orange';
+  color: #FFA629;
+}
+
+.book-btn{
+    display: flex;
+    justify-content: center;    
+    align-items: center;
+    height: 50px;
+    margin:auto;
+    border: 3px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 700;
+    font-family: 'Maiden Orange';
+    color: #FFA629;
+}
+
+
+
+.navbar .inline{
+   list-style: none;
+   display: inline-block;
+   padding: 10px 10px;
+   
+}
+
+.navbar .inline a{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: 'Maiden Orange';
+    font-size: 20px;
+}
+
+.p-align{
+    text-align: center;
+}
+
+.btn{
+    color:#FFA629 ;
+    padding:15px;
+    width: 100px;
+    font-size: 25px;
+    font-family: 'Maiden Orange';
+    font-weight: 500;
+    margin-top: 6px;
+    display: inline-block;
+    justify-items: center;
+}
+
+.body{
+    padding: 30px;
+    background-color: #f1efefd0;
+    font-family: 'Maiden Orange';
+}
+
+.boxes{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-evenly;
+    
+}
+
+.box1{
+    width: 320px;
+    height: 200px;
+    padding: 10px;
+    border: 2px solid rgb(255, 255, 255);
+    margin: 0;
+    background-color: white;
+}
+
+.box2{
+    width: 320px;
+    height: 200px;
+    padding: 10px;
+    border: 2px solid rgb(255, 255, 255);
+    margin: 0;
+    background-color: white;
+}
+
+.box3{
+    width: 320px;
+    height: 200px;
+    padding: 10px;
+    border: 2px solid rgb(255, 255, 255);
+    margin: 0;
+    background-color: white;
+}
+
+.box4{
+    width: 320px;
+    height: 200px;
+    padding: 10px;
+    border: 2px solid rgb(255, 255, 255);
+    margin: 0;
+    background-color: white;
+}
+
+h4{
+    font-weight: bold;
+    font-family: 'Maiden Orange';
+}
+h1{
+    color: #FFA629;
+}
+
+
+p{
+    font-family: 'Maiden Orange';
+}
+
+.checked{
+color: orange;
+}
+
+.footul .footlist a{
+    text-decoration: none;
+    color: white;
+    line-height: 50px;
+}
+
+.overlay {
+display: none;
+  justify-content: center;
+  align-items: center;
+  min-height: 96.9vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    overflow: auto;
+}
+
+/*Login Overlay*/
+
+.overlay-content {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+   
+    padding: 30px;
+    width: 400px;
+    border-radius: 10px;
+}
+    .second-wrapper{
+    position: relative;
+    width: 400px;
+    height: 440px;
+    background: white;
+    border: 2px solid rgba(225, 225, 225, .5);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    color: white;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    overflow: hidden;
+}
+.second-wrapper .form-box{
+    width: 100%;
+    padding: 40px;
+}
+.second-wrapper .icon-close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background: #FEB953;
+    font-size: 1.3em;
+    color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    z-index: 1;
+}
+.form-box h2{
+    font-size: 2em;
+    color: rgb(0, 0, 0);
+    text-align: center;
+}
+.input-box{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid rgb(0, 0, 0);
+    margin: 30px 0;
+}
+.input-box label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s;
+}
+.input-box input:focus~label,
+.input-box input:valid~label{
+    top: -5%;
+}
+.input-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+}
+.input-box i {
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    color: rgb(0, 0, 0);
+    line-height: 57px;
+}
+.remember-forgot {
+    font-size: .9em;
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+.remember-forgot label input{
+    accent-color: #162938;
+    margin-right: 3px;
+}
+.remember-forgot a{
+    color:rgb(0, 0, 0);
+    text-decoration: none;
+}
+.remember-forgot a:hover{
+    text-decoration: underline;
+    color: red;
+}
+.second-wrapper .btn {
+    width: 100%;
+    height: 45px;
+    background: #FEB953;
+    border: none;
+    outline: none;
+    border-radius: 100px;
+    cursor: pointer;
+    font-size: 1em;
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+}
+.login-register{
+    font-size: .9em;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-weight: 500;
+}
+.login-register p a{
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-weight: 600;
+}
+.login-register p a:hover {
+    text-decoration: underline;
+    color: red;
+}
+.login-admin{
+  font-size: .9em;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  font-weight: 500;
+}
+.login-admin p a{
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-weight: 600;
+}
+.login-admin p a:hover {
+  text-decoration: underline;
+  color: red;
+}

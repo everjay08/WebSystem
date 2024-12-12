@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+::after,
+::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+h1 {
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: #FFA629;
+}
+
+body {
+    font-family: 'Maiden Orange', sans-serif;
+}
+
+.wrapper {
+    display: flex;
+}
+
+.main {
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    transition: all 0.35s ease-in-out;
+    background-color: #252836;
+}
+
+#sidebar {
+    width: 200px;
+    min-width: 70px;
+    z-index: 1000;
+    transition: all .25s ease-in-out;
+    background-color: #1F1D2B;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-nav {
+    padding: 2rem 0;
+    flex: 1 1 auto;
+}
+
+a.sidebar-link {
+    position: relative;
+    top: 140px;
+    padding: .625rem 1.625rem;
+    margin-left: 34px;
+    color: #FFF;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.sidebar-link i {
+    position: relative;
+    font-size: 58px;
+    margin-bottom: 30px;
+}
+
+a.sidebar-link:hover {
+    color: #FFA629;
+    background-color: #252836;
+    border-right: 33px solid transparent;
+}
+
+.sidebar-item {
+    display: flex;
+}
+
+.navbar {
+    list-style: none;
+    display: inline-block;
+}
+
+.navbar a{
+    
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+}
+
+.navbar a:hover{
+    color: #FFA629;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    background-color: #ffffff;
+    margin: 10px 0;
+}   
+
+.boxes{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 50px;
+    
+    
+}
+
+.box1{
+    width: 250px;
+    height: 200px;
+    padding: 10px;
+    border: 2px solid rgb(255, 255, 255);
+    margin: 0;
+    background-color: #1F1D2B;
+}
+
+.box2{
+    width: 250px;
+    height: 200px;
+    padding: 10px;
+    border: 2px solid rgb(255, 255, 255);
+    margin: 0;
+    background-color: #1F1D2B;
+}
+
+
+
+.box3{
+    width: 320px;
+    height: 200px;
+    padding: 10px;
+    border: 2px solid rgb(255, 255, 255);
+    margin: 0;
+    background-color: #1F1D2B;
+}
+
+.box4{
+    width: 320px;
+    height: 200px;
+    padding: 10px;
+    border: 2px solid rgb(255, 255, 255);
+    margin: 0;
+    background-color: #1F1D2B;
+}

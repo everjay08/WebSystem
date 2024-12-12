@@ -1,0 +1,16 @@
+body {
+    font-family: 'Arial', sans-serif;
+}
+h1 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+.bg-secondary {
+    background-color: #343a40 !important;
+}
+.table thead {
+    background-color: #495057;
+}
+.table tbody tr {
+    background-color: #343a40;
+}
