@@ -393,7 +393,7 @@
 				  />
                   </div>
                   <div class="form-group">
-                    <label for="email" class="form-label">Table ID</label>
+                    <label for="email" class="form-label">Table Number</label>
                     <select name="table_id" class="form-control" id="table_id"></select>
                   </div>
                   <div class="form-group">
@@ -443,12 +443,9 @@
         <!-- Menu Section -->
         <div class="tabs">
           <div class="tab active" onclick="showMenu('appetizer')">
-            Appetizer
+            Food Menu
           </div>
-          <div class="tab" onclick="showMenu('entrée')">Entrée</div>
-          <div class="tab" onclick="showMenu('desserts')">Desserts</div>
-          <div class="tab" onclick="showMenu('drinks')">Drinks</div>
-          <div class="tab" onclick="showMenu('ordered')">Most Ordered</div>
+         
         </div>
 
         <!-- Dishes -->
@@ -465,6 +462,8 @@
         </div>
         <div class="cart-total" id="cart-total">Total: ₱0</div>
         <div class="cart-button" id="create-order">Continue to Payment</div>
+        <br>
+        <input type="text" name="delivery_address" id="delivery_address" placeholder="Enter delivery address">
       </div>
 
       <script>
@@ -593,16 +592,16 @@
               0
             );
             const menuItems = cart.map((item) => item.id);
-
+            let deliveryAddress = $("#delivery_address").val();
             const payload = {
               total_amount: totalAmount,
               customer_id: userId, // to change to actual user id
               delivery_id: 2,
               status: "Pending",
-              delivery_address: "Davao del Norte State College", // to change to actual delivery address
+              delivery_address: deliveryAddress, 
               menu_items: menuItems,
             };
-
+           
             $.ajax({
               url: "http://127.0.0.1:8000/api/order-delivery-item",
               method: "POST",
@@ -647,10 +646,12 @@
 			success: function (response) {
 				var selectTable = $("#table_id");
 				selectTable.empty();
-
 			  response.forEach(function (table) {
-				  const option = `<option value="${table.id}">${table.table_number}</option>`;
+          if (table.is_available == 1){
+            const option = `<option value="${table.id}">${table.table_number}</option>`;
 				  selectTable.append(option);
+          }
+				  
 			  })
 			}
 			});
